@@ -1,4 +1,5 @@
 import './App.css'
+import { Analytics } from "@vercel/analytics/react"
 
 function App() {
     return (
@@ -215,6 +216,7 @@ function App() {
                     &copy; 2024 AI/ML Roadmap. All rights reserved.
                 </small>
             </footer>
+            <Analytics />
         </>
     )
 }
