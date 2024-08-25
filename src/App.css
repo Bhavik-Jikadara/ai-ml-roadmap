@@ -34,10 +34,6 @@ h1 {
   font-size: 3em;
 }
 
-h2 {
-  margin-bottom: 0.5em;
-}
-
 .title {
   text-align: center;
 }
@@ -64,7 +60,8 @@ a {
 }
 
 a:hover {
-  text-decoration: underline;
+  color: #ffcc00;
+  text-decoration: none;
 }
 
 a::after {
@@ -190,5 +187,10 @@ footer {
       top: -0.5em;
       left: 50%;
       transform: translateX(-50%);
+  }
+}
+@media screen and (max-width: 720px) {
+  hr{
+    margin: 5em 5em 5em 5em;
   }
 }
