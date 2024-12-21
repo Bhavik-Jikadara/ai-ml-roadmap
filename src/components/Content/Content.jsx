@@ -1,208 +1,79 @@
-import '../Footer/Footer.css'; // Ensure this file exists with proper styles
-import 'bootstrap-icons/font/bootstrap-icons.css';
-import '../../App.css';
+import { useState } from 'react';
+import { ChevronRight, ExternalLink } from 'lucide-react';
+import PropTypes from 'prop-types';
 
-function Content() {
-    return (
-        <div className="timeline">
-            <div className="checkpoint">
-                <div className="sub-checkpoint">
-                    <h2>Funamentals of Programming</h2>
-                    <ul>
-                        <li><a href="https://youtu.be/rfscVS0vtbw?si=-g8pxFjh634NP2ik" target="_blank">Python
-                            Programming</a></li>
-                        <li><a href="https://youtu.be/_V8eKsto3Ug?si=z6ze4xp02cF6REzV" target="_blank">R Programming</a>
-                        </li>
-                        <li><a href="https://youtu.be/2ZLl8GAk1X4?si=RRdusoShLTKGhRY2">Algorithms and Data
-                            Structures</a>
-                        </li>
-                        <li><a href="https://youtu.be/oBt53YbR9Kk?si=4Iz7YHrwKgvPxsk-">Problem Solving Techniques</a>
-                        </li>
-                        <li><a href="https://youtu.be/Ej_02ICOIgs?si=F8aiU6NJDwM4BM2X">OOP Concepts</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div className="checkpoint">
-                <div className="sub-checkpoint">
-                    <h2>Mathematics for AI/ML</h2>
-                    <ul>
-                        <li><a href="https://math.mit.edu/~djk/calculus_beginners/" target="_blank">Calculus</a></li>
-                        <li><a href="https://immersivemath.com/ila/learnmore.html" target="_blank">Linear Algebra</a>
-                        </li>
-                        <li><a href="https://www.khanacademy.org/math/statistics-probability" target="_blank">Probability
-                            and Statistics</a></li>
-                        <li><a href="https://www.khanacademy.org/math/differential-equations" target="_blank">Differential
-                            Equations</a></li>
-                        <li><a href="https://youtube.com/playlist?list=PLHXZ9OQGMqxersk8fUxiUMSIx0DBqsKZS&si=nh4dvkLqD2pLsNh-"
-                            target="_blank">Discrete Mathematics</a></li>
-                        <li><a href="https://www.youtube.com/playlist?list=PLLtQL9wSL16ioUvHckGCkoWq_CIvyUI0p"
-                            target="_blank">Optimization Technologies</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div className="checkpoint">
-                <div className="sub-checkpoint">
-                    <h2>Basics of AI/ML</h2>
-                    <ul>
-                        <li><a href="https://youtu.be/ukzFI9rgwfU?si=j0XZ_rPJkxotPdDI" target="_blank">Introductions to
-                            Supervised and Unsupervised Learning in Machine Learning, Neural Networks, Deep
-                            Learning,
-                            and Reinforcement Learning</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div className="checkpoint">
-                <div className="sub-checkpoint">
-                    <h2>Data Skills for AI/ML</h2>
-                    <ul>
-                        <li><a href="https://labelyourdata.com/articles/data-collection-methods-AI">Data Collection</a>
-                        </li>
-                        <li><a href="https://monkeylearn.com/blog/data-cleaning-steps/">Data Cleaning and Processing</a>
-                        </li>
-                        <li><a
-                            href="https://builtin.com/articles/feature-engineering#:~:text=Apr%2029%2C%202024-,Feature%20engineering%20is%20the%20process%20of%20selecting%2C%20manipulating%20and%20transforming,used%20in%20a%20predictive%20model.">Feature
-                            Engineering</a></li>
-                        <li><a href="https://towardsdatascience.com/exploratory-data-analysis-8fc1cb20fd15">Exploratory
-                            Data
-                            Analysis</a></li>
-                        <li><a href="https://www.datacamp.com/blog/data-visualization-techniques">Data Visualization
-                            Technologies</a></li>
-                        <li><a href="https://www.kaggle.com/discussions/getting-started/251992">Use of Libraries like
-                            Pandas, Numpy Matplotlib, Seaborn</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div className="checkpoint">
-                <div className="sub-checkpoint">
-                    <h2>Machine Learning</h2>
-                    <ul>
-                        <li><a href="https://www.youtube.com/watch?v=JxgmHe2NyeY&t=85s">Linear Regression, Logistic
-                            Regression</a></li>
-                        <li><a href="https://www.youtube.com/watch?v=JxgmHe2NyeY&t=85s">Decision Trees and Random
-                            Forests</a></li>
-                        <li><a href="https://www.youtube.com/watch?v=JxgmHe2NyeY&t=85s">Support Vector Machines</a></li>
-                        <li><a href="https://www.youtube.com/watch?v=JxgmHe2NyeY&t=85s">K-Nearest Neighbours</a></li>
-                        <li><a href="https://www.youtube.com/watch?v=JxgmHe2NyeY&t=85s">Naive Bayes</a></li>
-                        <li><a href="https://www.youtube.com/watch?v=JxgmHe2NyeY&t=85s">XGBoost, LightGBM, CatBoost</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div className="checkpoint">
-                <div className="sub-checkpoint">
-                    <h2>Deep Learning</h2>
-                    <ul>
-                        <li><a href="https://www.youtube.com/watch?v=d2kxUVwWWwU">ANN and CNN</a></li>
-                        <li><a href="https://www.theaidream.com/post/introduction-to-rnn-and-lstm">RNN and LSTM</a></li>
-                        <li><a
-                            href="https://machinelearningmastery.com/what-are-generative-adversarial-networks-gans/">GANs</a>
-                        </li>
-                        <li><a href="https://blogs.nvidia.com/blog/what-is-a-transformer-model/">Transformer Models</a>
-                        </li>
-                        <li><a href="https://www.datacamp.com/tutorial/pytorch-vs-tensorflow-vs-keras">Deep Learning
-                            Libraries (Tensorflow, PyTorch, Keras)</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div className="checkpoint">
-                <div className="sub-checkpoint">
-                    <h2>Natural Language Processing</h2>
-                    <ul>
-                        <li><a href="https://www.youtube.com/playlist?list=PLZoTAELRMXVNNrHSKv36Lr3_156yCo6Nn">Text
-                            Preprocessing Techniques</a></li>
-                        <li><a href="https://www.youtube.com/playlist?list=PLZoTAELRMXVNNrHSKv36Lr3_156yCo6Nn">Word
-                            Embeddings</a></li>
-                        <li><a href="https://www.youtube.com/playlist?list=PLZoTAELRMXVNNrHSKv36Lr3_156yCo6Nn">Bag of
-                            Words,
-                            TF-IDF</a></li>
-                        <li><a href="https://www.youtube.com/playlist?list=PLZoTAELRMXVNNrHSKv36Lr3_156yCo6Nn">LSTMs,
-                            GRU</a></li>
-                        <li><a href="https://youtu.be/7kLi8u2dJz0?si=uFBZbpPylf_wUxIs">Transformers and BERT</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div className="checkpoint">
-                <div className="sub-checkpoint">
-                    <h2>Computer Vision</h2>
-                    <ul>
-                        <li><a href="https://youtu.be/IA3WxTTPXqQ?si=60PIJEvV1XUwSncT">Image Processing Techniques</a>
-                        </li>
-                        <li><a href="https://youtu.be/IA3WxTTPXqQ?si=60PIJEvV1XUwSncT">Convolutional Neural Networks</a>
-                        </li>
-                        <li><a href="https://youtu.be/IA3WxTTPXqQ?si=60PIJEvV1XUwSncT">Object Detection Algorithms</a>
-                        </li>
-                        <li><a href="https://youtu.be/IA3WxTTPXqQ?si=60PIJEvV1XUwSncT">Image Segmentation</a></li>
-                        <li><a href="https://youtu.be/IA3WxTTPXqQ?si=60PIJEvV1XUwSncT">Facial Recognition Techniques</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div className="checkpoint">
-                <div className="sub-checkpoint">
-                    <h2>Reinforcement Learning</h2>
-                    <ul>
-                        <li><a href="https://youtu.be/14BfO5lMiuk?si=FBib9Nyj-jLVzbtP">Bellman Equation</a></li>
-                        <li><a href="https://youtu.be/0iqz4tcKN58?si=gzOkPVPXnNZXFMgJ">Q-Learning</a></li>
-                        <li><a href="https://www.geeksforgeeks.org/sarsa-reinforcement-learning/">SARSA
-                            (State-Action-Reward-State-Action)</a></li>
-                        <li><a href="https://www.tensorflow.org/agents/tutorials/0_intro_rl">Deep Q-Network</a></li>
-                        <li><a href="https://towardsdatascience.com/policy-gradients-in-a-nutshell-8b72f9743c5d">Policy
-                            Gradient Methods</a></li>
-                        <li><a
-                            href="https://www.analyticsvidhya.com/blog/2018/11/reinforcement-learning-introduction-monte-carlo-learning-openai-gym/#:~:text=A.,a%20model%20of%20the%20environment.">Monte
-                            Carlo Methods</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div className="checkpoint">
-                <div className="sub-checkpoint">
-                    <h2>Tools and Libraries</h2>
-                    <ul>
-                        <li>Scipy, Scikit-Learn</li>
-                        <li>Keras, TensorFlow, PyTorch</li>
-                        <li>OpenCV</li>
-                        <li>Matplotlib, Seaborn, Plotly</li>
-                        <li>Pandas, Numpy</li>
-                        <li>Jupyter Notebook, Jupyter Lab</li>
-                    </ul>
-                </div>
-            </div>
-            <div className="checkpoint">
-                <div className="sub-checkpoint">
-                    <h2>Build AI/ML Applications</h2>
-                    <ul>
-                        <li>End-to-end Model Development</li>
-                        <li>Application Integration(Web, Mobile)</li>
-                        <li>Using ML Cloud Platforms(AWS, Azure, GCP)</li>
-                        <li>Using AI API Services</li>
-                        <li>Deployment and Scaling of Models</li>
-                        <li>Model Optimization Techniques</li>
-                    </ul>
-                </div>
-            </div>
-            <div className="checkpoint">
-                <div className="sub-checkpoint">
-                    <h2>Knowledge on Recent Trends and Advacements</h2>
-                    <ul>
-                        <li>Quantum Computing</li>
-                        <li>Federated Learning</li>
-                        <li>AI Ethics and Fairness</li>
-                        <li>AutoML and Neural Architecture Search</li>
-                        <li>Explainable AI</li>
-                        <li>AI in Edge devices</li>
-                    </ul>
-                </div>
-            </div>
-            <div className="checkpoint">
-                <div className="sub-checkpoint">
-                    <h2>The Super Duper NLP Repo</h2>
-                    <ul>
-                        <li><a href="https://notebooks.quantumstat.com/">The Super Duper NLP Repo</a></li>
-                    </ul>
-                </div>
-            </div>
+
+
+export const Header = () => (
+    <div className="relative overflow-hidden mb-12 mt-12 rounded-xl bg-gray-900/80 backdrop-blur-sm shadow-xl">
+      <div className="absolute inset-0 bg-gradient-to-r from-gray-900 to-blue-900 opacity-90" />
+      <div className="relative bg-gradient-to-r from-gray-900 to-blue-900 p-12 rounded-b-3xl shadow-2xl">
+        <div className="max-w-4xl mx-auto relative">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-white/5 to-transparent animate-pulse" />
+          <h1 className="text-6xl font-bold mb-8 text-white bg-clip-text relative z-10 animate-fade-in">
+            AI/ML Roadmap 2024
+          </h1>
+          <p className="text-xl text-gray-200 leading-relaxed max-w-2xl relative z-10 animate-slide-up">
+            Master Artificial Intelligence and Machine Learning with our comprehensive learning path.
+            Access curated resources and join a community of learners.
+          </p>
         </div>
-    );
-}
+      </div>
+    </div>
+  );
 
-export default Content;
+export const Checkpoint = ({ title, items, index, isVisible }) => {
+    const [isExpanded, setIsExpanded] = useState(false);
+  
+    return (
+      <div 
+        className={`transform transition-all duration-700 ${
+          isVisible ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0'
+        }`}
+      >
+        <div className="bg-gray-900/80 backdrop-blur-sm rounded-xl p-6 mb-8 shadow-xl hover:shadow-2xl transition-all duration-300 border border-gray-800">
+          <div 
+            className="flex items-center justify-between mb-6 cursor-pointer"
+            onClick={() => setIsExpanded(!isExpanded)}
+          >
+            <div className="flex items-center">
+              <div className="w-10 h-10 bg-blue-900 rounded-full flex items-center justify-center mr-4">
+                <span className="text-white font-bold">{index + 1}</span>
+              </div>
+              <h2 className="text-2xl font-bold text-white">{title}</h2>
+            </div>
+            <ChevronRight 
+              className={`w-6 h-6 text-gray-400 transform transition-transform duration-300 ${
+                isExpanded ? 'rotate-90' : ''
+              }`}
+            />
+          </div>
+          
+          <div className={`space-y-4 overflow-hidden transition-all duration-500 ${
+            isExpanded ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0'
+          }`}>
+            {items.map((item, idx) => (
+              <div 
+                key={idx}
+                className="flex items-center bg-gray-800/50 backdrop-blur-sm p-4 rounded-lg hover:bg-gray-700/50 transition-colors group"
+              >
+                {item.href ? (
+                  <a
+                    href={item.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gray-200 hover:text-blue-400 flex items-center justify-between w-full group"
+                  >
+                    <span>{item.text || item}</span>
+                    <ExternalLink className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity" />
+                  </a>
+                ) : (
+                  <span className="text-gray-200">{item.text || item}</span>
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    );
+  };

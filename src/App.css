@@ -1,196 +1,70 @@
-* {
-  margin: 0;
-  padding: 0;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-body {
-  margin: 0;
-  font-family: sans-serif;
-  background-color: #17153B;
-  background-size: cover;
-  color: #F6F5F5;
-  padding: 2em;
-}
-
-body::before {
-  content: "";
-  background: rgba(0, 0, 0, .7);
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-  position: fixed;
-}
-
-
-hr{
-  margin: 5em 25em 5em 25em;
-}
-
-h1 {
-  margin: 0.3em;
-  font-size: 3em;
-}
-
-.title {
-  text-align: center;
-}
-
-.title p {
-  color: #F6F5F5;
-  font-size: 1.3em;
-  letter-spacing: 2px;
-}
-
-ul {
-  color: #F6F5F5;
-  margin: 1em;
-}
-
-
-li {
-  margin: 1.5em;
-}
-
-a {
-  text-decoration: none;
-  color: #F6F5F5;
-}
-
-a:hover {
-  color: #ffcc00;
-  text-decoration: none;
-}
-
-a::after {
-  text-decoration: none;
-  color: #F6F5F5;
-}
-
-.timeline {
-  margin: 5em auto;
-  max-width: 34.15em;
-}
-
-.checkpoint {
-  max-width: 34em;
-  padding-top: 2em;
-  padding-bottom: 2em;
-  position: relative;
-}
-
-.sub-checkpoint{
-  -webkit-box-shadow: 0px 0px 38px -6px rgba(75, 139, 229, 1);
-  -moz-box-shadow: 0px 0px 38px -6px rgba(75, 139, 229, 1);
-  box-shadow: 0px 0px 38px -6px rgba(75, 139, 229, 1);
-}
-
-.checkpoint div {
-  background-color: #17153B;
-  border: 2px solid #4b8be5;
-  border-radius: 1em;
-  padding: 1.5em;
-}
-
-.checkpoint p {
-  line-height: 27px;
-  color: #ccc;
-}
-
-.checkpoint:nth-child(odd) {
-  border-left: 3px solid #4b8be5;
-  padding-left: 3em;
-  transform: translateX(17em);
-}
-
-.checkpoint:nth-child(even) {
-  border-right: 3px solid #4b8be5;
-  padding-right: 3em;
-  transform: translateX(-17em);
-}
-
-.checkpoint:nth-child(odd)::before,
-.checkpoint:nth-child(even)::before {
-  content: "";
-  background: #4b8be5;
-  width: 3em;
-  height: 3px;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-.checkpoint:nth-child(odd)::before {
-  left: 0;
-}
-
-.checkpoint:nth-child(even)::before {
-  right: 0;
-}
-
-.checkpoint:nth-child(odd) div::before,
-.checkpoint:nth-child(even) div::before {
-  content: "";
-  background: #F6F5F5;
-  box-shadow: 0 0 0.5em #0d71fc;
-  width: 0.8em;
-  height: 0.8em;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  border-radius: 50%;
-}
-
-.checkpoint:nth-child(odd) div::before {
-  left: -0.5em;
-}
-
-.checkpoint:nth-child(even) div::before {
-  right: -0.5em;
-}
-
-footer {
-  font-size: 1.5em;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding: 1em;
-  background-color: #17153B;
-}
-
-
-@media screen and (max-width: 1150px) {
-  .timeline {
-      width: 80vw;
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+    --primary: 240 5.9% 10%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 240 4.8% 95.9%;
+    --secondary-foreground: 240 5.9% 10%;
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+    --accent: 240 4.8% 95.9%;
+    --accent-foreground: 240 5.9% 10%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 240 10% 3.9%;
+    --chart-1: 12 76% 61%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+    --radius: 0.5rem
   }
 
-  .timeline .checkpoint {
-      width: 100%;
-      transform: none;
-      padding-left: 0;
-      padding-right: 0;
-      border: none;
-  }
-
-  .timeline .checkpoint::before {
-      width: 3px;
-      height: 4em;
-      top: -2em;
-      left: 50%;
-      transform: translateX(-50%);
-  }
-
-  .timeline .checkpoint div::before {
-      top: -0.5em;
-      left: 50%;
-      transform: translateX(-50%);
+  .dark {
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 240 5.9% 10%;
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+    --accent: 240 3.7% 15.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 240 4.9% 83.9%;
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%
   }
 }
-@media screen and (max-width: 720px) {
-  hr{
-    margin: 5em 5em 5em 5em;
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
   }
 }
