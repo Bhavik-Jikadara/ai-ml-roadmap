@@ -1,87 +1,44 @@
-import { useState } from 'react';
-import { Menu, X } from 'lucide-react';
+import { ExternalLink } from 'lucide-react';
+import Medium from '../../assets/medium.png';
 
-export const Navbar = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-  const navLinks = [
-    { name: 'Home', href: '' },
-    { name: 'Resources', href: 'https://bhavikjikadara.medium.com' },
-    { name: 'Roadmap', href: 'https://github.com/Bhavik-Jikadara/ai-ml-roadmap/blob/main/README.md' },
-  ];
-
-  return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-gray-900/80 backdrop-blur-md border-b border-gray-800">
-      <div className="max-w-6xl mx-auto px-4">
-        <div className="flex justify-between items-center h-16">
-          {/* Logo */}
-          <div className="flex-shrink-0">
-            <a href="/" className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
-              AI/ML Roadmap
-            </a>
-          </div>
-
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
-            {navLinks.map((link) => (
-              <a
-                key={link.name}
-                href={link.href}
-                className="text-gray-300 hover:text-blue-400 transition-colors text-sm font-medium"
-              >
-                {link.name}
-              </a>
-            ))}
-            <a
-              href="https://github.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors"
-            >
-              Get Started
-            </a>
-          </div>
-
-          {/* Mobile menu button */}
-          <div className="md:hidden">
-            <button
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="text-gray-300 hover:text-white p-2"
-            >
-              {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-            </button>
-          </div>
+export const Header = () => (
+  <div className="relative overflow-hidden mb-16 mt-24 rounded-2xl">
+    <div className="absolute inset-0 bg-gradient-to-r from-blue-600/20 to-purple-600/20 blur-3xl" />
+    <div className="relative bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 p-12 md:p-16 rounded-2xl border border-gray-800/50 shadow-2xl">
+      <div className="max-w-4xl mx-auto relative">
+        <div className="absolute inset-0">
+          <div className="absolute top-0 right-0 w-72 h-72 bg-blue-500/10 rounded-full blur-3xl animate-pulse" />
+          <div className="absolute bottom-0 left-0 w-72 h-72 bg-purple-500/10 rounded-full blur-3xl animate-pulse delay-700" />
         </div>
 
-        {/* Mobile Navigation */}
-        <div
-          className={`md:hidden absolute top-16 left-0 right-0 bg-gray-900/95 backdrop-blur-md border-b border-gray-800 transition-all duration-300 ease-in-out ${
-            isMenuOpen ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4 pointer-events-none'
-          }`}
-        >
-          <div className="px-4 py-6 space-y-4">
-            {navLinks.map((link) => (
-              <a
-                key={link.name}
-                href={link.href}
-                className="block text-gray-300 hover:text-blue-400 transition-colors text-sm font-medium py-2"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                {link.name}
-              </a>
-            ))}
-            <a
-              href="https://github.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="block bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors text-center"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Get Started
+        <div className="relative z-10 space-y-8">
+          <div className="space-y-4">
+            <div className="flex items-center space-x-3 mb-6">
+              <span className="px-4 py-1 bg-blue-600/20 text-blue-400 rounded-full text-sm font-medium">
+                2025 Edition
+              </span>
+              <span className="px-4 py-1 bg-purple-600/20 text-purple-400 rounded-full text-sm font-medium">
+                Updated Weekly
+              </span>
+            </div>
+            <h1 className="text-4xl md:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400">
+              AI/ML Roadmap 2025
+            </h1>
+            <p className="text-xl text-gray-300 leading-relaxed max-w-2xl">
+              Master Artificial Intelligence and Machine Learning with our comprehensive learning path.
+              Access curated resources and join a community of learners.
+            </p>
+          </div>
+
+          <div className="flex flex-wrap gap-6">
+            <a href="https://bhavikjikadara.medium.com" target="_blank" className="flex items-center space-x-2 px-6 py-3 bg-gray-800 hover:bg-gray-700 text-white rounded-xl font-medium transition-all border border-gray-700">
+              <img src={Medium} alt="Medium" className="w-6 h-6" />
+              <span>Follow on Medium</span>
+              <ExternalLink className="w-4 h-4" />
             </a>
           </div>
         </div>
       </div>
-    </nav>
-  );
-};
+    </div>
+  </div>
+);
