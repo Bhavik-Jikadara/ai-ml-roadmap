@@ -2,19 +2,106 @@
 <html lang="en">
 
 <head>
+  <!-- Standard meta tags for SEO -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Comprehensive AI/ML Roadmap for Beginners in 2024.">
-  <link rel="icon" href="./src/assets/favicon.png" type="image/x-icon">
+  <meta name="description"
+    content="Explore a comprehensive AI/ML Roadmap to guide beginners in 2025. Learn about AI and Machine Learning concepts, tools, and skills to help you succeed in the field.">
   <meta name="keywords"
-    content="AI roadmap, ML roadmap, AI/ML guide, AI/ML development, artificial intelligence, machine learning">
+    content="AI roadmap, ML roadmap, artificial intelligence, machine learning, AI for beginners, AI/ML guide, learning AI, AI skills, machine learning roadmap, data science">
   <meta name="author" content="Bhavik Jikadara">
-  <title>AI/ML Roadmap</title>
+  <title>AI/ML Roadmap: A Complete Guide for Beginners in 2025</title>
+
+  <!-- Open Graph Meta Tags (For Social Media) -->
+  <meta property="og:title" content="AI/ML Roadmap: A Complete Guide for Beginners in 2025">
+  <meta property="og:description"
+    content="A complete roadmap for beginners to understand AI and Machine Learning in 2025. Learn step-by-step how to get started in the AI/ML field.">
+  <meta property="og:image" content="./src/assets/social-share-image.png"> <!-- Image for social media sharing -->
+  <meta property="og:url" content="https://ai-ml-roadmap.vercel.app">
+  <meta property="og:type" content="website">
+
+  <!-- Twitter Card Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="AI/ML Roadmap: A Complete Guide for Beginners in 2025">
+  <meta name="twitter:description"
+    content="Discover a complete AI/ML Roadmap for beginners. Understand how to build a strong foundation in AI and Machine Learning.">
+  <meta name="twitter:image" content="./src/assets/favicon.png">
+
+  <!-- Favicon -->
+  <link rel="icon" href="./src/assets/favicon.png" type="image/x-icon">
+
+  <!-- Schema.org Markup for Google -->
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "WebSite",
+      "name": "AI/ML Roadmap",
+      "url": "https://ai-ml-roadmap.vercel.app",
+      "description": "A roadmap for beginners to get started with AI and ML in 2025, including a structured learning path and resources.",
+      "author": {
+        "@type": "Person",
+        "name": "Bhavik Jikadara"
+      }
+    }
+  </script>
+
 </head>
 
 <body>
-  <div id="root"></div>
+  <div id="root">
+    <h1>AI/ML Roadmap</h1>
+    <p>Welcome to our comprehensive guide on the AI/ML Roadmap for beginners. Learn about the concepts, tools, and
+      resources you need to get started in artificial intelligence and machine learning in 2025!</p>
+
+    <!-- Add a search bar -->
+    <input type="text" id="searchInput" placeholder="Search for keywords (e.g., AI, ML, roadmap)..." />
+
+    <div id="content">
+      <!-- Section 1: AI and ML Roadmap Overview -->
+      <section class="keyword-section" data-keywords="AI, ML, roadmap, artificial intelligence, machine learning">
+        <h2>AI and ML Roadmap Overview</h2>
+        <p>This section outlines a detailed AI/ML roadmap to help you understand the fundamentals of AI, machine
+          learning, and how to get started with practical skills.</p>
+      </section>
+
+      <!-- Section 2: Essential AI Skills for Beginners -->
+      <section class="keyword-section" data-keywords="AI skills, learning AI, machine learning basics, data science">
+        <h2>Essential AI Skills for Beginners</h2>
+        <p>Discover the core skills you need to develop to start working in AI. Topics include learning algorithms,
+          neural networks, deep learning, and data science basics.</p>
+      </section>
+
+      <!-- Section 3: How to Build a Career in AI and Machine Learning -->
+      <section class="keyword-section" data-keywords="AI for beginners, machine learning career, career roadmap">
+        <h2>How to Build a Career in AI and Machine Learning</h2>
+        <p>Want to pursue a career in AI and ML? This section will guide you through the essential learning path and
+          resources to start your career in AI.</p>
+      </section>
+
+      <!-- Additional sections can be added similarly -->
+    </div>
+  </div>
+
   <script type="module" src="./src/main.jsx"></script>
+
+  <script>
+    // JavaScript to handle search functionality based on keywords in data-keywords attribute
+    const searchInput = document.getElementById('searchInput');
+    const sections = document.querySelectorAll('.keyword-section');
+
+    searchInput.addEventListener('input', function () {
+      const query = searchInput.value.toLowerCase();
+
+      sections.forEach(section => {
+        const keywords = section.getAttribute('data-keywords').toLowerCase();
+        if (keywords.includes(query)) {
+          section.style.display = 'block';
+        } else {
+          section.style.display = 'none';
+        }
+      });
+    });
+  </script>
 </body>
 
 </html>
